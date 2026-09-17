@@ -106,13 +106,13 @@ module AesCipherCoreWrapper_AES256_ECB_NoMask
     .prng_reseed_i    ( prng_reseed_i         ),
     .prng_reseed_o    (                       ), // Ignored.
     .key_clear_i      ( 1'b0                  ), // Ignored.
-    .key_clear_o      (                       ), // Ignored.
+    .key_clear_o      (                       ), // Ignore
     .data_out_clear_i ( 1'b0                  ), // Ignored.
     .data_out_clear_o (                       ), // Ignored.
     .alert_fatal_i    ( 1'b0                  ), // Ignored.
     .alert_o          ( alert_o               ), // Ignored.
 
-    .prd_clearing_i   ( WidthPRDClearing'(prd_clearing_i_0)   ),
+    .prd_clearing_i   ( '{NumShares{WidthPRDClearing'(prd_clearing_i_0)}} ),
 
     .force_masks_i    ( 1'b0                  ), // Ignored.
     .data_in_mask_o   ( data_in_mask_o        ),
